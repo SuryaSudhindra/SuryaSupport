@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, Response
 import csv
 from flask import session
+import pytz
 import json
 import os
 from datetime import datetime
@@ -128,7 +129,8 @@ def raise_ticket():
         issue_type = request.form['issue_type']
         username = request.form.get('username', 'Unknown')  # default if session not used
         from datetime import datetime
-        now = datetime.now()
+        india_timezone = pytz.timezone("Asia/Kolkata")
+        now = datetime.now(india_timezone)
         ticket_date = now.strftime("%d-%m-%Y")
         ticket_time = now.strftime("%H:%M:%S")
         serial_number = len(tickets) + 1
