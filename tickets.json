@@ -1,0 +1,102 @@
+[
+  {
+    "id": "070701",
+    "Campus": "PCJ",
+    "raised_by": "teacher1",
+    "description": "save_tickets(tickets)\r\n",
+    "issue_type": "IT",
+    "date": "07-07-2025",
+    "time": "15:17:24",
+    "status": "Pending"
+  },
+  {
+    "id": "070702",
+    "Campus": "PCK",
+    "raised_by": "teacher1",
+    "description": "save_tickets(tickets)\r\n",
+    "issue_type": "Plumbing",
+    "date": "07-07-2025",
+    "time": "15:17:35",
+    "status": "In Progress"
+  },
+  {
+    "id": "070703",
+    "Campus": "PCK",
+    "raised_by": "teacher1",
+    "description": "save_tickets(tickets)\r\n",
+    "issue_type": "Plumbing",
+    "date": "07-07-2025",
+    "time": "15:19:11",
+    "status": "In Progress"
+  },
+  {
+    "id": "070704",
+    "Campus": "PCK",
+    "raised_by": "teacher1",
+    "description": "print(\"\ud83d\udcbe Saving to JSON...\", len(tickets), \"tickets\")  # \u2705 Add this line",
+    "issue_type": "Electrical",
+    "date": "07-07-2025",
+    "time": "15:28:01",
+    "status": "Pending"
+  },
+  {
+    "id": "070705",
+    "Campus": "Meliora",
+    "raised_by": "teacher1",
+    "description": "print(\"\ud83d\udcbe Saving to JSON...\", len(tickets), \"tickets\")  # \u2705 Add this line",
+    "issue_type": "Electrical",
+    "date": "07-07-2025",
+    "time": "15:28:08",
+    "status": "Pending"
+  },
+  {
+    "id": "070706",
+    "Campus": "PCJ",
+    "raised_by": "teacher1",
+    "description": "print(\"\ud83d\udcbe Saving to JSON...\", len(tickets), \"tickets\")  # \u2705 Add this line",
+    "issue_type": "Electrical",
+    "date": "07-07-2025",
+    "time": "15:28:15",
+    "status": "Pending"
+  },
+  {
+    "id": "070707",
+    "Campus": "PCJ",
+    "raised_by": "teacher1",
+    "description": "print(\"\ud83d\udcbe Saving to JSON...\", len(tickets), \"tickets\")  # \u2705 Add this line",
+    "issue_type": "IT",
+    "date": "07-07-2025",
+    "time": "15:30:20",
+    "status": "Pending"
+  },
+  {
+    "id": "070708",
+    "Campus": "PCJ",
+    "raised_by": "teacher1",
+    "description": "print(\"\ud83d\udcbe Saving to JSON...\", len(tickets), \"tickets\")  # \u2705 Add this line",
+    "issue_type": "Admin",
+    "date": "07-07-2025",
+    "time": "15:30:28",
+    "status": "Pending"
+  },
+  {
+    "id": "070709",
+    "Campus": "PCJ",
+    "raised_by": "teacher1",
+    "description": "print(\"\ud83d\udcbe Saving to JSON...\", len(tickets), \"tickets\")  # \u2705 Add this line",
+    "issue_type": "Plumbing",
+    "date": "07-07-2025",
+    "time": "15:30:36",
+    "status": "Pending"
+  },
+  {
+    "id": "070710",
+    "Campus": "PCJ",
+    "raised_by": "teacher1",
+    "description": " print(\"\ud83d\udcc1 Path:\", os.path.abspath(TICKETS_FILE))  # \u2705 Add this line",
+    "issue_type": "IT",
+    "date": "07-07-2025",
+    "time": "15:38:10",
+    "status": "Pending"
+  }
+]

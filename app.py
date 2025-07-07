@@ -46,10 +46,26 @@ def send_email(subject, body):
             print("📧 Email sent to IT Head.")
     except Exception as e:
         print("❌ Error sending email:", e)
+import json
+import os
+
+TICKETS_FILE = 'tickets.json'
+
+def load_tickets():
+    if os.path.exists(TICKETS_FILE):
+        with open(TICKETS_FILE, 'r') as file:
+            return json.load(file)
+    return []
+
+def save_tickets(tickets):
+    print("💾 Saving to JSON...", len(tickets), "tickets")  # ✅ Add this line
+    print("📁 Path:", os.path.abspath(TICKETS_FILE))  # ✅ Add this line
+    with open(TICKETS_FILE, 'w') as file:
+        json.dump(tickets, file, indent=2)
 
 app = Flask(__name__)
 app.secret_key = 'surya@148'  # 🔐 You can make this any strong string
-tickets = []  # This will hold all ticket submissions
+tickets = load_tickets()  # This will hold all ticket submissions
 ticket_serials = {}  # To track how many tickets raised each day
 
 # Temporary users stored here (just for testing now)
@@ -72,9 +88,6 @@ def add_employee():
         return render_template('add_employee.html', message="✅ User added successfully!")
 
     return render_template('add_employee.html')
-
-
-
 @app.route('/remove-employee')
 def remove_employee():
     return "Remove Employee Page (Under Construction)"
@@ -133,6 +146,7 @@ def raise_ticket():
         }
 
         tickets.append(ticket)
+        save_tickets(tickets)
         return render_template('raise_ticket.html', message="✅ Ticket submitted successfully!")
 
     return render_template('raise_ticket.html')
@@ -192,6 +206,7 @@ def update_status():
             elif ticket['status'] == 'Resolved':
                 ticket['status'] = 'Pending'
             break
+    save_tickets(tickets)
 
     return redirect(url_for('it_dashboard'))
 
