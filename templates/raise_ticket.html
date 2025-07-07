@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Raise Ticket</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<div style="text-align: center; margin-bottom: 20px;">
+  <img src="{{ url_for('static', filename='pragathi_logo.jpeg') }}" alt="Pragathi Logo" width="200">
+  <h1 style="font-family: Georgia, serif; color: #2c3e50; margin-top: 10px;">Service Request Desk</h1>
+
+</div>
+<body>
+    <div class="container">
+        <h2>Raise a Ticket</h2>
+        <form method="POST">
+
+            <div class="form-group">
+                <label for="Campus">Campus:</label>
+                <select name="Campus" required>
+                    <option value="">Select Campus</option>
+                    <option value="PCS">PCS</option>
+                    <option value="PPS">PPS</option>
+                    <option value="Meliora">Meliora</option>
+                    <option value="PCK">PCK</option>
+                    <option value="PCJ">PCJ</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="issue_type">Issue Type:</label>
+                <select name="issue_type" required>
+                    <option value="">Select Issue</option>
+                    <option value="IT">IT</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Plumbing">Plumbing</option>
+                    <option value="Electrical">Electrical</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea name="description" rows="4" cols="40" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Submit Ticket">
+                <button type="button" onclick="window.location.href='/logout'">Logout</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>

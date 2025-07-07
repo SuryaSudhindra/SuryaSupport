@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add New Employee</title>
+</head>
+<body>
+    <h2>Add New User</h2>
+
+    {% if message %}
+        <p style="color: green;">{{ message }}</p>
+    {% endif %}
+
+    <form method="POST" action="{{ url_for('add_employee') }}">
+        <label for="username">Username:</label><br>
+        <input type="text" name="username" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="text" name="password" required><br><br>
+
+        <label for="role">Role:</label><br>
+        <select name="role" required>
+            <option value="teacher">Teacher</option>
+            <option value="it">IT Head</option>
+            <option value="admin">Admin</option>
+        </select><br><br>
+
+        <button type="submit">Add User</button>
+    </form>
+
+    <br>
+    <form action="{{ url_for('it_dashboard') }}">
+        <button type="submit">Back to Dashboard</button>
+    </form>
+</body>
+</html>

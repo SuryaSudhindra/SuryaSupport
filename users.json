@@ -1,0 +1,23 @@
+{
+    "teacher1": {
+        "password": "pass123",
+        "role": "teacher"
+    },
+    "ithead": {
+        "password": "admin123",
+        "role": "it"
+    },
+    "admin": {
+        "password": "root123",
+        "role": "admin"
+    },
+    "surya": {
+        "password": "surya",
+        "role": "it"
+    },
+
+    "Raghava": {
+        "password": "pass123",
+        "role": "teacher"
+    }
+}

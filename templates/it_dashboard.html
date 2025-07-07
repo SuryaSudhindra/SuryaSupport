@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IT Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<div style="text-align: center; margin-bottom: 20px;">
+  <img src="{{ url_for('static', filename='pragathi_logo.jpeg') }}" alt="Pragathi Logo" width="200">
+  <h1 style="font-family: Georgia, serif; color: #2c3e50; margin-top: 10px;">Dashboard</h1>
+
+</div>
+
+ <h2>🧑‍💻 Welcome IT Head</h2>
+<div style="text-align: right; margin-bottom: 10px;">
+    <form action="{{ url_for('logout') }}" method="get">
+        <button type="submit" style="background-color: #f44336; color: white; padding: 8px 16px; border: none; border-radius: 4px;">Logout</button>
+    </form>
+</div>
+
+    <!-- 🔘 Action Buttons -->
+<div class="button-row">
+    <form action="/add-employee" method="get">
+        <button type="submit">Add Employee</button>
+    </form>
+    <form action="/remove-employee" method="get">
+        <button type="submit">Remove Employee</button>
+    </form>
+    <form action="/export" method="get">
+        <button type="submit">Download Report</button>
+    </form>
+</div>
+
+    <table border="1">
+    <tr>
+        <th>Ticket ID</th>
+        <th>Campus</th>
+        <th>Issue Type</th>
+        <th>Raised By</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+
+    {% for ticket in tickets %}
+    <tr>
+        <td>{{ ticket.id }}</td>
+        <td>{{ ticket.Campus }}</td>
+        <td>{{ ticket.issue_type }}</td>
+        <td>{{ ticket.raised_by }}</td>
+        <td>{{ ticket.description }}</td>
+        <td>{{ ticket.date }}</td>
+        <td>{{ ticket.time }}</td>
+        <td>{{ ticket.status }}</td>
+        <td>
+            <form method="POST" action="/update_status">
+                <input type="hidden" name="ticket_id" value="{{ ticket.id }}">
+                <button type="submit">Change Status</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
