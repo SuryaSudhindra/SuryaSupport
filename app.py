@@ -181,7 +181,8 @@ def export_tickets():
             ticket["issue_type"],
             ticket["description"],
             ticket["date"],
-            ticket["time"]
+            ticket["time"],
+            ticket.get("status", "")  # This safely handles if action is missing
         ])
 
     output.seek(0)
